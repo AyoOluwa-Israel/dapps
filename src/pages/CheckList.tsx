@@ -40,7 +40,6 @@ const CheckList = () => {
 
   return (
     <div className="w-[90%] mx-auto">
-
       <p className="text-center py-4 font-semibold text-2xl">List of Attendees</p>
       <div className="mt-4">
         <table className="w-[100%] rounded-lg overflow-hidden">

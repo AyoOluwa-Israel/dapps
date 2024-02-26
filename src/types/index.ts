@@ -10,6 +10,5 @@ export type TBookDetails = {
   id: string;
   is_accepted: boolean;
   date_created: string;
-  sn?: number 
+  sn?: number;
 };
-
