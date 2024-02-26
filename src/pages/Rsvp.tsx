@@ -4,16 +4,24 @@ import PrimaryInput from "@/components/PrimaryInput";
 import { TRegister } from "@/types";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import RsvpModal from "./RsvpModal";
+import { useState } from "react";
 
 const validationSchema = Yup.object({
   first_name: Yup.string().required("This is a required field"),
   last_name: Yup.string().required("This is a required field"),
 });
 
+const initialValues: TRegister = {
+  first_name: "",
+  last_name: "",
+};
+
 const Rsvp = () => {
-  const initialValues: TRegister = {
-    first_name: "",
-    last_name: "",
+  const [open, setOpen] = useState<number | null>(null);
+
+  const handleModal = (id: number | null) => {
+    setOpen(open === id ? null : id);
   };
 
   const onSubmit = async (data: TRegister) => {
@@ -62,15 +70,17 @@ const Rsvp = () => {
               error={getError("last_name")}
               type="text"
             />
-          </form>
 
-          <div className="w-[100%]">
-            <PrimaryButton text="Keep My Seat" type="button" />
-          </div>
+            <div className="w-[100%] pt-[2em]">
+              <PrimaryButton text="Keep My Seat" type="button" />
+            </div>
+          </form>
         </div>
 
         <div></div>
       </div>
+
+      {open === 1 ? <RsvpModal handleModal={handleModal} /> : null}
     </div>
   );
 };
