@@ -2,22 +2,18 @@ import ModalWithoutClose from "@/components/ModalWithoutClose";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import Logo from "@/assets/images/logo2.png";
 
-
 interface ModalProps {
   handleModal: (value: number) => void;
 }
 
-
-
-
-const RsvpModal: React.FC<ModalProps>  = ({handleModal}) => {
+const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
   return (
     <ModalWithoutClose>
       <div className="w-[450px] text-center">
         <div className="flex items-center justify-between">
           <p></p>
 
-          <IoCloseCircleOutline className="text-3xl cursor-pointer" onClick={ () => handleModal(1)} />
+          <IoCloseCircleOutline className="text-3xl cursor-pointer" onClick={() => handleModal(1)} />
         </div>
 
         <div className="my-[2em] space-y-6">
