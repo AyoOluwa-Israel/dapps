@@ -9,7 +9,6 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { bookUser } from "@/services/bookServices";
 
-
 const validationSchema = Yup.object({
   first_name: Yup.string().required("This is a required field"),
   last_name: Yup.string().required("This is a required field"),
@@ -50,8 +49,6 @@ const Rsvp = () => {
     return touched[key] && errors[key];
   };
 
- 
-
   return (
     <div className="h-[100vh] w-[100vw] md:bg-heroDesktop2Bg bg-mobile2 bg-no-repeat bg-cover text-white flex md:flex-row flex-col justify-center items-center space-y-4">
       <div className="w-[75%] mx-auto">
@@ -91,10 +88,6 @@ const Rsvp = () => {
 
         <div></div>
       </div>
-
-
-
-
 
       {/* <RsvpModal handleModal={handleModal} />  */}
 
