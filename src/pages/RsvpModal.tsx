@@ -20,7 +20,7 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
       })
         .then((canvas) => {
           const imgUrl = canvas.toDataURL("image/jpeg");
-          saveAs(imgUrl, "page.jpg");
+          saveAs(imgUrl, "invite.jpg");
         })
         .catch((error) => {
           console.error("Error generating image: ", error);
