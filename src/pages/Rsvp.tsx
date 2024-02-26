@@ -81,7 +81,7 @@ const Rsvp = () => {
             />
 
             <div className="w-[100%] pt-[2em]">
-              <PrimaryButton text="Keep My Seat" type="submit" isLoading={isPending} disabled={isPending} />
+              <PrimaryButton text="Confirm attendance" type="submit" isLoading={isPending} disabled={isPending} />
             </div>
           </form>
         </div>
