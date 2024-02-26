@@ -6,6 +6,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import RsvpModal from "./RsvpModal";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { bookUser } from "@/services/bookServices";
+
 
 const validationSchema = Yup.object({
   first_name: Yup.string().required("This is a required field"),
@@ -19,16 +22,23 @@ const initialValues: TRegister = {
 
 const Rsvp = () => {
   const [open, setOpen] = useState<number | null>(null);
+  const { mutate, isPending } = useMutation({
+    mutationFn: bookUser,
+    onSuccess: () => {
+      handleModal(1);
+      resetForm();
+    },
+  });
 
   const handleModal = (id: number | null) => {
     setOpen(open === id ? null : id);
   };
 
   const onSubmit = async (data: TRegister) => {
-    console.log(data);
+    mutate(data);
   };
 
-  const { handleChange, values, handleBlur, handleSubmit, errors, touched } = useFormik({
+  const { handleChange, values, handleBlur, handleSubmit, errors, touched, resetForm } = useFormik({
     initialValues,
     validationSchema,
     onSubmit,
@@ -40,13 +50,15 @@ const Rsvp = () => {
     return touched[key] && errors[key];
   };
 
+ 
+
   return (
-    <div className="h-[100vh] w-[100vw] bg-heroDesktop2Bg bg-no-repeat bg-cover text-white flex justify-center items-center space-y-4">
+    <div className="h-[100vh] w-[100vw] md:bg-heroDesktop2Bg bg-mobile2 bg-no-repeat bg-cover text-white flex md:flex-row flex-col justify-center items-center space-y-4">
       <div className="w-[75%] mx-auto">
-        <div className="w-[40%]">
+        <div className="md:w-[40%] w-[100%]">
           <img src={Logo} alt="Logo" className="w-[200px] mx-auto" />
 
-          <p className="text-xl text-center mt-[3em]">
+          <p className="md:text-xl text-base text-center mt-[3em]">
             Reserve a seat for the <span className="font-semibold ">9th of March. 0:05 PM. WAT.</span>
           </p>
 
@@ -72,13 +84,19 @@ const Rsvp = () => {
             />
 
             <div className="w-[100%] pt-[2em]">
-              <PrimaryButton text="Keep My Seat" type="button" />
+              <PrimaryButton text="Keep My Seat" type="submit" isLoading={isPending} disabled={isPending} />
             </div>
           </form>
         </div>
 
         <div></div>
       </div>
+
+
+
+
+
+      {/* <RsvpModal handleModal={handleModal} />  */}
 
       {open === 1 ? <RsvpModal handleModal={handleModal} /> : null}
     </div>
