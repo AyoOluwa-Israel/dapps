@@ -45,7 +45,7 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
 
             <p className=" sm:w-[80%] w-[95%] mx-auto ">Congratulations, your attendance is confirmed.</p>
 
-            <p className="font-bold cursor-pointer" onClick={handleDownloadClick}>
+            <p className="font-bold cursor-pointer underline underline-offset-1" onClick={handleDownloadClick}>
               download your receipt.
             </p>
           </div>
