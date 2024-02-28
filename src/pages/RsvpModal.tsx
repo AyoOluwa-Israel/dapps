@@ -61,10 +61,10 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
 
             <hr className="border-black my-3 w-[70%] mx-auto" />
 
-            <p className="text-xs pt-4">This Admit One Only.</p>
+            <p className="text-xs pt-4">This Admits One Only.</p>
 
             <p className="font-bold cursor-pointer underline underline-offset-1" onClick={handleDownloadClick}>
-              download your receipt.
+              Download your invite.
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
               <span className="font-normal"> A touch of white.</span>
             </p>
 
-            <p className="text-xs pt-6">This Admit One Only.</p>
+            <p className="text-xs pt-6">This Admits One Only.</p>
           </div>
         </div>
       </div>
