@@ -32,7 +32,7 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
 
   return (
     <ModalWithoutClose>
-      <div className="overflow-y-scroll  max-h-[80vh]">
+      <div className="overflow-y-scroll  md:max-h-[55vh] max-h-[52vh]">
         <div className="sm:w-[450px] w-[100%] text-center ">
           <div className="flex items-center justify-between">
             <p></p>
@@ -44,6 +44,17 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
             <img src={Logo2} alt="Logo" className="w-[150px] mx-auto" />
 
             <p className=" sm:w-[80%] w-[95%] mx-auto ">Congratulations, your attendance is confirmed.</p>
+
+            <hr className="border-black my-3 w-[70%] mx-auto" />
+
+            <p className="font-semibold">
+              Glam Dress Code: <br />
+              <span className="font-normal"> A touch of white.</span>
+            </p>
+
+            <hr className="border-black my-3 w-[70%] mx-auto" />
+
+            <p className="text-xs pt-4">This Admits Only One.</p>
 
             <p className="font-bold cursor-pointer underline underline-offset-1" onClick={handleDownloadClick}>
               download your receipt.

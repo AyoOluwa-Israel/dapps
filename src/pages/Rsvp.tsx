@@ -89,7 +89,7 @@ const Rsvp = () => {
         <div></div>
       </div>
 
-      {/* <RsvpModal handleModal={handleModal} />  */}
+      <RsvpModal handleModal={handleModal} /> 
 
       {open === 1 ? <RsvpModal handleModal={handleModal} /> : null}
     </div>
