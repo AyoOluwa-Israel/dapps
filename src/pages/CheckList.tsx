@@ -24,7 +24,7 @@ const CheckList = () => {
     queryFn: getBookDetails,
   });
 
-  console.log(data);
+  // console.log(data);
 
   const contactData: TBookDetails[] = data
     ? data.map((el, i) => ({

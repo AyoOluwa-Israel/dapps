@@ -77,7 +77,7 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
 
             <p className="font-semibold">
               Time:
-              <span className="font-normal"> 5:00 PM WAT.</span>
+              <span className="font-normal"> 6:00 PM WAT.</span>
             </p>
 
             <hr className="border-black my-3 w-[70%] mx-auto" />
