@@ -13,9 +13,9 @@ interface ModalProps {
 const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
   const navigate = useNavigate();
   const handleClose = () => {
-    navigate('/')
-    handleModal(1)
-  }
+    navigate("/");
+    handleModal(1);
+  };
 
   const handleDownloadClick = () => {
     const page = document.getElementById("page-to-download");
