@@ -4,12 +4,14 @@ import Logo2 from "@/assets/images/logo2.png";
 import Logo from "@/assets/images/logo.png";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
+import { useNavigate } from "react-router-dom";
 
 interface ModalProps {
   handleModal: (value: number) => void;
 }
 
 const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
+  const navigate = useNavigate()
   const handleDownloadClick = () => {
     const page = document.getElementById("page-to-download");
 
