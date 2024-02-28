@@ -56,7 +56,7 @@ const Rsvp = () => {
           <img src={Logo} alt="Logo" className="w-[200px] mx-auto" />
 
           <p className="md:text-xl text-base text-center mt-[3em]">
-            <span className="font-semibold ">9th of March. 6:00 PM. WAT.</span>
+            <span className="font-semibold ">9th of March | 6:00 PM WAT</span>
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4 my-[3em]">
