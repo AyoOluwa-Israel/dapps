@@ -11,7 +11,12 @@ interface ModalProps {
 }
 
 const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const handleClose = () => {
+    navigate('/')
+    handleModal(1)
+  }
+
   const handleDownloadClick = () => {
     const page = document.getElementById("page-to-download");
 
@@ -39,7 +44,7 @@ const RsvpModal: React.FC<ModalProps> = ({ handleModal }) => {
           <div className="flex items-center justify-between">
             <p></p>
 
-            <IoCloseCircleOutline className="text-3xl cursor-pointer" onClick={() => handleModal(1)} />
+            <IoCloseCircleOutline className="text-3xl cursor-pointer" onClick={handleClose} />
           </div>
 
           <div className="my-[2em] space-y-6">
